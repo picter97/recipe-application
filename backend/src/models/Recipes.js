@@ -1,12 +1,12 @@
-import mongoose from"mongoose"
+import mongoose from "mongoose";
 
 const RecipeSchema = new mongoose.Schema({
     name: {
-        type:String,
+        type: String,
         required: true,
     },
     ingredients: [{ type: String, required: true}],
-    instuctions: {type: String, required: true},
+    instructions: {type: String, required: true},
     imageUrl: {type: String, required: true},
     cookingTime: {type: Number, required: true},
     userOwner: { 
@@ -16,4 +16,4 @@ const RecipeSchema = new mongoose.Schema({
     },
 });
 
-export const RecipeModel = mongoose.model("Cluster0", RecipeSchema);
+export const RecipeModel = mongoose.model("recipes", RecipeSchema);
