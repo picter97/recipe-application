@@ -7,6 +7,7 @@ import {CreateRecipe } from './pages/createRecipe';
 import {SavedRecipe } from './pages/savedRecipe';
 import { NotFound }  from './pages/notFound';
 import { Navbar } from './components/Navbar';
+import { Auth } from './pages/auth';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/create-recipe" element={<CreateRecipe/>}/>
+          <Route path= "/auth" element={<Auth/>}/>
           <Route path="/saved-recipe" element={<SavedRecipe/>}/>
           <Route path="/*"  element={<NotFound/>}/>
         </Routes>
