@@ -14,7 +14,6 @@ export const Auth = () => {
 
 const Login = () => {
   
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,7 +28,6 @@ const Login = () => {
         password,
       });
 
-      
       window.localStorage.setItem("userID", result.data.userID);
       navigate("/");
     } catch (error) {
