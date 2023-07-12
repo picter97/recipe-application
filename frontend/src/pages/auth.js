@@ -1,26 +1,27 @@
+
 export const Auth = () => {
-return (
-<div className="auth">
-<login/>
-<Register/>
-</div>
+    return (
+    <div className="auth">
+        <login/>
+        <Register/>
+    </div>
 
-
-);
+    );
 };
 
 
 const Login = () => {
-return <div></div>
+    return <div></div>
 };
 
 
 const Register = () => {
-const [username,setUsername] = useState("");
-const [password,setPassword] = useState("");
+    const [username,setUsername] = useState("");
+    const [password,setPassword] = useState("");
 
 
-return <div className="auth-container">
+return
+ <div className="auth-container">
 <form>
 <h2>Register</h2>
 <div className="form-group">
@@ -49,6 +50,9 @@ onChange={(event) => setPassword(event.target.value)}></input>
 };
 
 
+
+
 const Form = ({username, setUsername, password, setPassword}) => {
 return
 }
+ 
