@@ -6,14 +6,13 @@ import { useNavigate } from "react-router-dom";
 export const Auth = () => {
   return (
     <div className="auth">
-      <Login />
-      <Register />
+      <Login/>
+      <Register/>
     </div>
   );
-};
-
+}
 const Login = () => {
-  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -64,11 +63,9 @@ const Login = () => {
 };
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
 
-  
-  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState(""); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
