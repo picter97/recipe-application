@@ -63,6 +63,11 @@ router.get("/savedRecipes/ids", async (req, res) => {
     }
     }); 
 
+    router.delete("/:id", async (req, res) => {
+        const result = await RecipeModel.findByIdAndDelete(req.params.id);
+        res.json(result);
+      });
+
 
 
 export { router as recipesRouter};
