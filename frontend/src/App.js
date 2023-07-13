@@ -20,7 +20,6 @@ function App() {
           <Route path="/create-recipe" element={<CreateRecipe/>}/>
           <Route path= "/auth" element={<Auth/>}/>
           <Route path="/saved-recipe" element={<SavedRecipe/>}/>
-          <Route path='/user/:userId' element={<Auth/>}/>
           <Route path="/*"  element={<NotFound/>}/>
         </Routes>
       </Router>
