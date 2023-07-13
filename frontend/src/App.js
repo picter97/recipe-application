@@ -9,6 +9,7 @@ import { NotFound }  from './pages/notFound';
 import { Navbar } from './components/Navbar';
 import { Auth } from './pages/auth';
 
+
 function App() {
   return (
     <div >
