@@ -22,6 +22,20 @@ export const SavedRecipes = () => {
 
   }, [userID]);
 
+  const handleDeleteRecipe = async (recipeId) => {
+    try {
+      await axios.delete(`http://localhost:3001/recipes/${recipeId}`);
+      
+      const updatedRecipes = savedRecipes.filter(
+        (recipe) => recipe._id !== recipeId
+      );
+      setSavedRecipes(updatedRecipes);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+
   return (
     <div>
       <h1>Saved Recipes</h1>
@@ -34,10 +48,12 @@ export const SavedRecipes = () => {
             <p>{recipe.description}</p>
             <img src={recipe.imageUrl} alt={recipe.name} />
             <p>Cooking Time: {recipe.cookingTime} minutes</p>
+            <button onClick={() => handleDeleteRecipe(recipe._id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
-
     </div>
   );
 };
