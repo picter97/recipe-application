@@ -43,7 +43,7 @@ export const CreateRecipe = () => {
         "http://localhost:3001/recipes",
         { ...recipe },
         {
-           headers: { authorization: cookies.access_token },
+          headers: { authorization: cookies.access_token },
         }
       );
 
