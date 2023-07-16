@@ -11,7 +11,8 @@ export const Home = () => {
   useEffect (() => {
     const fetchRecipes = async () => {
       try {
-        const response =  await axios.get("http://localhost:3001/recipes");
+        console.log(HOST+"/recipes")
+        const response =  await axios.get(HOST+"/recipes");
         setRecipes(response.data);
       } catch (err) {
         console.error(err);
