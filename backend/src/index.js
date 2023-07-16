@@ -14,7 +14,9 @@ app.use(cors(
         credentials: tue
     }
 ))
-
+app.get("/",(req,res) => {
+    res.json("hello");
+})
 app.use(express.json());
 app.use(cors());
 
