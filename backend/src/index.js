@@ -7,7 +7,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-
+app.use(cors(
+    {
+        origin:["http://recipe-application-backend.vercel.app"],
+        methods:["POST","GET","PUT"],
+        credentials: tue
+    }
+))
 
 app.use(express.json());
 app.use(cors());
