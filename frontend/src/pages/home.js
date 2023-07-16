@@ -62,6 +62,7 @@ const handleDelete = async (recipeID) => {
 
 const isRecipeSaved = (id) => savedRecipes.includes(id);
 
+
   return (
     <div>
       <h2> Recipes</h2>
@@ -72,7 +73,8 @@ const isRecipeSaved = (id) => savedRecipes.includes(id);
               <h2>{recipe.name}</h2>
               <button onClickCapture = {() => saveRecipe(recipe._id)}  disabled={isRecipeSaved(recipe._id)}>
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"} </button>
-                <button onClick={() => handleDelete(recipe._id)}>
+                <button onClick={() => 
+                  handleDelete(recipe._id)}>
                   {(recipe._id) ? "Delete" : "Delete"}  
             </button>
             </div>
@@ -80,7 +82,7 @@ const isRecipeSaved = (id) => savedRecipes.includes(id);
               <p>{recipe.instructions}</p>
             </div>
             <img src={recipe.imageUrl} alt={recipe.name}/>
-            <p>Cooking Time:  (minutes)</p>
+            <p>Cooking Time: {recipe.cookingTime} minutes</p>
           </li>
         ))}
       </ul>
