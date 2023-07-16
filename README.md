@@ -2,7 +2,7 @@
 
  This application will help you create recipies to show to other users and will let you save your favorite ones. when creating a new recipie you should be able to add as much ingredients as you want , and also it will allow you to add a picture to that recipie.
 
-routes
+
 #### Routes
 
 | / |    /saved-recipe | /*|
@@ -13,8 +13,18 @@ routes
 | :---:   
 | displays log in and log out   
 
-#### usage
+#### Usage
 in order to create a new recipie you will need to create a username and password after this step you will be able to create a new recipie. when creating a new recipie you will be able to add a name for that recipie, add diferrent ingredients , you can also add a picture to that recipie, also biref descripiton to that recipie and last thing the time that it takes to cook.
+
+all this date its connecte to a mongodb server and checked by postman.
+
+##contributios :
+
+####Teona Tskhadaia
+####Teona Zaalishvili
+####Diana villa
+####Picter millan
+
 
 
 # Getting Started with Create React App
