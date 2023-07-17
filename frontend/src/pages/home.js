@@ -42,19 +42,27 @@ export const Home = () => {
   }
 };
 
-const handleDelete = async (recipeId) => {
+const handleDelete = async (recipeID) => {
   try {
-    await axios.delete(`http://localhost:3001/recipes/${recipeId}`);
-      
-    const updatedRecipes = savedRecipes.filter(
-      (recipe) => recipe._id !== recipeId
+    // Use axios.delete instead of fetch with DELETE method
+    await axios.delete(
+      `http://localhost:3001/recipes/${recipeID}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
-    setSavedRecipes(updatedRecipes);
-    window.location.reload(); // Refresh the page
-  } catch (err) {
-    console.error(err);
+    // Rest of your code handling the deletedRecipe
+   
+  } catch (error) {
+    // Handle any error that occurs during the request
+    console.error(error);
   }
 };
+
+
+
 const isRecipeSaved = (id) => savedRecipes.includes(id);
 
 
