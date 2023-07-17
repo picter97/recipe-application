@@ -11,8 +11,8 @@ export const Home = () => {
   useEffect (() => {
     const fetchRecipes = async () => {
       try {
-        console.log(HOST+"/recipes")
-        const response =  await axios.get(HOST+"/recipes");
+        console.log("http://localhost:3001/recipes")
+        const response =  await axios.get("http://localhost:3001/recipes");
         setRecipes(response.data);
       } catch (err) {
         console.error(err);
@@ -42,25 +42,19 @@ export const Home = () => {
   }
 };
 
-const handleDelete = async (recipeID) => {
+const handleDelete = async (recipeId) => {
   try {
-    // Use axios.delete instead of fetch with DELETE method
-    await axios.delete(
-      `http://localhost:3001/recipes/${recipeID}`,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+    await axios.delete(`http://localhost:3001/recipes/${recipeId}`);
+      
+    const updatedRecipes = savedRecipes.filter(
+      (recipe) => recipe._id !== recipeId
     );
-    // Rest of your code handling the deletedRecipe
-   
-  } catch (error) {
-    // Handle any error that occurs during the request
-    console.error(error);
+    setSavedRecipes(updatedRecipes);
+    window.location.reload(); // Refresh the page
+  } catch (err) {
+    console.error(err);
   }
 };
-
 const isRecipeSaved = (id) => savedRecipes.includes(id);
 
 
