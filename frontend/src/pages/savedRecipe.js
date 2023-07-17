@@ -24,7 +24,7 @@ export const SavedRecipes = () => {
 
   const handleDeleteRecipe = async (recipeId) => {
     try {
-      await axios.delete(`http://localhost:3001/recipes/${recipeId}`);
+      await axios.delete(`http://localhost:3001/recipe${recipeId}`);
       
       const updatedRecipes = savedRecipes.filter(
         (recipe) => recipe._id !== recipeId
